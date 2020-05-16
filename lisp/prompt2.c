@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /* If we are compiling on Windows compile these functions */
-#ifdef _WIN32 // __linux__ for linux
+#ifdef _WIN32 // for both 32 and 64-bit Windows, __linux__ for linux or __unix__
 #include <string.h>
 
 static char buffer[2048];
@@ -24,7 +24,7 @@ void add_history(char *unused) {}
 /* Otherwise include the editline headers */
 #else
 #include <editline/readline.h>
-// #include <editline/history.h> provided by readline
+// #include <editline/history.h> provided by readline in macOS
 #endif
 
 int main(int argc, char **argv)
