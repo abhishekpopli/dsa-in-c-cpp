@@ -6,11 +6,15 @@
       "label": "shell: gcc build active file",
       "command": "/usr/bin/gcc",
       "args": [
-        "-std=c99", // c11, c18
-        "-Wall", // warnings
+        "-std=c11",
+        "-pedantic-errors",
+        "-Wall",
+        "-Wextra",
+        "-Wsign-conversion",
+        "-Werror",
+        "-ledit",
         "-g",
         "${file}",
-        "-ledit", // linking
         "-o",
         "${workspaceFolder}/build/${fileBasenameNoExtension}"
       ],
@@ -28,6 +32,13 @@
       "label": "shell: g++ build active file",
       "command": "/usr/bin/g++",
       "args": [
+        "-std=c++17",
+        "-pedantic-errors",
+        "-Wall",
+        "-Weffc++",
+        "-Wextra",
+        "-Wsign-conversion",
+        "-Werror",
         "-g",
         "${file}",
         "-o",
