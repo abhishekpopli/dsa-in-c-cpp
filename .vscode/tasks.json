@@ -6,10 +6,11 @@
       "label": "shell: gcc build active file",
       "command": "/usr/bin/gcc",
       "args": [
-        "-std=c99",
+        "-std=c99", // c11, c18
+        "-Wall", // warnings
         "-g",
         "${file}",
-        "-ledit", // for linking
+        "-ledit", // linking
         "-o",
         "${workspaceFolder}/build/${fileBasenameNoExtension}"
       ],
@@ -21,6 +22,22 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "shell",
+      "label": "shell: g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build"
     }
   ]
 }
