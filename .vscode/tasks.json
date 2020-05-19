@@ -6,7 +6,7 @@
       "label": "shell: gcc build active file",
       "command": "/usr/bin/gcc",
       "args": [
-        "-std=c11",
+        "-std=c18",
         "-pedantic-errors",
         "-Wall",
         "-Wextra",
