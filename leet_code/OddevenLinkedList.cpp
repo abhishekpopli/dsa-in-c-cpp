@@ -8,7 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class OddEvenLinkedList {
+class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
         if (head == NULL || head -> next == NULL)
